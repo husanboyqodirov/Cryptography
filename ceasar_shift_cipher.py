@@ -96,7 +96,7 @@ while(True):
         ciphertext = input("\nEnter cipher text: ")
         brute_force(ciphertext)
 
-    # exit the program
+    # exit program
     elif (option == 4):
         exit()
 
