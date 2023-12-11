@@ -1,5 +1,5 @@
 # Coded with love by Husanboy Qodirov
-# Dongseo University Cryptography & Network Security Lab
+# Cryptography & Network Security Lab
 
 # encrypt function takes two arguments: plaintext (string) and shift key (integer)
 def encrypt(plaintext, key):
@@ -59,9 +59,9 @@ while(True):
         plaintext = input("\nEnter plaintext: ")
         while(True):
             try:
-                shift = int(input("Enter shift key: "))
+                key = int(input("Enter shift key: "))
             except ValueError:
-                print("Enter only numbers for key shift.")
+                print("Enter only numbers for shift key.")
                 continue
             # Accept key value only if it is in range of 1 to 25.
             # Anything under or below this suggested key value causes 
@@ -70,26 +70,26 @@ while(True):
             # key 0 or 26 results in no cipher text. Or key over 25 such as
             # 29 results in same cipher text for key 3.
             # So all in all, effective key length is 25.
-            if (shift < 1 or shift > 25):
+            if (key < 1 or key > 25):
                 print("Shift key should be between 1 to 25")
                 continue
             break
-        print("Cipher text: " + encrypt(plaintext, shift))
+        print("Cipher text: " + encrypt(plaintext, key))
 
     # decryption
     elif (option == 2):
         ciphertext = input("\nEnter cipher text: ")
         while(True):
             try:
-                shift = int(input("Enter shift key: "))
+                key = int(input("Enter shift key: "))
             except ValueError:
-                print("Enter only numbers for key shift.")
+                print("Enter only numbers for shift key.")
                 continue
-            if (shift < 1 or shift > 25):
+            if (key < 1 or key > 25):
                 print("Shift key should be between 1 to 25")
                 continue
             break
-        print("Plain text: " + decrypt(ciphertext, shift))
+        print("Plain text: " + decrypt(ciphertext, key))
 
     # brute-force
     elif (option == 3):
